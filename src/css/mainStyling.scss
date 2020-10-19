@@ -1,0 +1,299 @@
+$colours : (
+    darkContrast: #222629,
+    darkerContrast: #2C3134,
+    lighterContrast:  #747C82,
+    lightContrast: #EBEBEB,
+    accent: #5EC182,
+    darkenaccent: #407455
+);
+
+/* general */
+@font-face {
+    font-family: Staatliches;
+    src: url(../assets/fonts/Staatliches-Regular.woff);
+}
+
+.custom-font {
+    font-family: Staatliches;
+}
+
+.text-light{
+    color: map-get($colours, lightContrast) !important;
+}
+
+.pa-0{
+    padding: 0;
+}
+
+/* general components */
+body{
+    background-color: map-get($colours, darkContrast);
+}
+
+p{
+    margin-bottom: .25em;
+}
+
+.caption-text{
+    font-size: 12px;
+}
+
+.navbar{
+    background: transparent;
+    border-bottom: map-get($colours, accent) 2px solid;
+    background: map-get($colours, darkContrast);
+}
+
+.form-control{
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    border-bottom: map-get($colours, lighterContrast) 1px solid;
+}
+
+
+/* Buttons styling */
+.btn-icon-primary{
+    color: map-get($colours, accent);
+    padding: 0 .25rem;
+}
+
+.btn-icon-primary:focus, .btn-icon-primary:hover{
+    color: map-get($colours, lightContrast);
+}
+
+.dropdown-item{
+    color: map-get($colours, lighterContrast);
+    
+}
+
+.dropdown-item:focus, .dropdown-item:hover{
+    background-color: transparent;
+    color: map-get($colours, lightContrast);
+}
+
+.dropdown-menu{
+    background-color: map-get($colours, darkerContrast);
+    border: none;
+}
+
+.btn-primary{
+    margin-top: -15%;
+    @media (max-width: 575px) {
+        margin-top: -8%;
+    }
+    
+    :focus, :hover{
+        background-color: map-get($colours, accent) !important;
+    }
+
+    border-radius: 0;
+    color: map-get($colours, accent);
+    padding: .05rem 2.25rem;
+    background-color: map-get($colours, darkContrast);
+    border: map-get($colours, accent) 2px solid;
+}
+.btn-primary:focus, .btn-primary:hover{
+    border: map-get($colours, accent) 2px solid;
+    background-color: darken(map-get($colours, accent), 20%) ;
+    color: map-get($colours, lightContrast);
+}
+
+
+/* footer components */
+.footer{
+    max-width: 100%;
+    margin-top: 2rem;
+    padding: 2rem;
+    border-top: map-get($colours, accent) 2px solid;
+    color: map-get($colours, lightContrast);
+}
+
+.img-container{
+    padding: .25rem;
+    max-height: 2rem;
+    background-color: map-get($colours, lightContrast);
+}
+
+.bg-accent{
+    background-color: map-get($colours, accent);
+    text-align: center;
+    margin: 0;
+    color: map-get($colours, darkContrast);
+}
+
+.footer-item-1{
+    @media (max-width: 768px) {
+        border-bottom: map-get($colours, accent) 2px solid;
+    }
+}
+.footer-item-2{
+    @media (max-width: 768px) {
+        border-bottom: map-get($colours, accent) 2px solid;
+    }
+    @media (min-width: 768px) {
+        border-left: map-get($colours, accent) 2px solid;
+    }
+    @media (min-width: 576px) {
+        border-left: map-get($colours, accent) 2px solid;
+    }
+}
+
+.footer-item-3{
+    @media (max-width: 576px) {
+        border-bottom: map-get($colours, accent) 2px solid;
+    }
+    @media (min-width: 768px) {
+        border-left: map-get($colours, accent) 2px solid;
+    }
+}
+.footer-item-4{
+    @media (min-width: 576px) {
+        border-left: map-get($colours, accent) 2px solid;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* components styling */
+.event-container{
+    border: map-get($colours, accent) 2px solid;
+}
+
+.event-list{
+    border-radius: 0 !important;
+    @media (max-width: 576px) {
+        border-top: map-get($colours, accent) 2px solid;
+        border-left: map-get($colours, accent) 2px solid;
+        border-right: map-get($colours, accent) 2px solid;
+    }
+    .list-group-item{
+        background-color: map-get($colours, darkerContrast);
+        border: none;
+    }
+
+    .active{
+        border: map-get($colours, accent) 2px solid;
+        background-color: map-get($colours, accent);
+        color: map-get($colours, darkContrast);
+    }
+    
+}
+
+
+
+  
+
+  
+.title-row { 
+    margin-top: 3rem;
+    display: flex; 
+    flex-direction: row; 
+} 
+  
+.title-row:before, 
+.title-row:after { 
+    content: ""; 
+    flex: 1 1; 
+    border-bottom: 2px solid map-get($colours, accent); 
+    margin: auto 1rem; 
+} 
+
+.card{
+    border: map-get($colours, accent) 1px solid;
+    border-radius: 0;
+}
+
+.card-body{
+    background-color: map-get($colours, accent);
+}
+
+.card-img{
+    height: 15rem;
+    object-fit: cover;
+}
+
+.ribbon {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  position: absolute;
+}
+.ribbon::before,
+.ribbon::after {
+  position: absolute;
+  z-index: -1;
+  content: '';
+  display: block;
+  border: 5px solid darken(map-get($colours, accent), 20%);
+}
+.ribbon span {
+  position: absolute;
+  display: block;
+  width: 140px;
+  padding: .25rem 0;
+  background-color: map-get($colours, accent);
+  box-shadow: 0 5px 10px rgba(0,0,0,.1);
+  color: map-get($colours, darkContrast);
+  font: 800 12px/1 'Lato', sans-serif;
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/* top left*/
+.ribbon-top-left {
+  top: -10px;
+  left: -10px;
+}
+.ribbon-top-left::before,
+.ribbon-top-left::after {
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.ribbon-top-left::before {
+  top: 0;
+  right: 23px;
+}
+.ribbon-top-left::after {
+  bottom: 23px;
+  left: 0;
+}
+.ribbon-top-left span {
+  right: -3px;
+  top: 20px;
+  transform: rotate(-45deg);
+}
+
+
+/* home content */
+.jumbotron{
+    padding: 5rem 2rem 5rem 2rem;
+    color: map-get($colours, darkContrast);
+    background: black url("../assets/images/1e0b6038705537.576bb656c265f.jpg") no-repeat scroll top;
+    background-size: cover;
+    min-height: 30rem;
+    opacity: .2;
+}
+
+.container-overlay{
+    position: absolute;
+    top: 0;
+    padding: 13rem 2rem 5rem 2rem;
+    @media (max-width: 400px) {
+        padding: 10rem 2rem 5rem 2rem;
+    }
+    color: map-get($colours, darkerContrast);
+    width: 100% !important;
+}
+
+
